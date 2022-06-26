@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-public class RadioTestSet {
+public class RadioTest {
 
     @Test
     public void shouldRadioStationSet(){
@@ -19,7 +19,6 @@ public class RadioTestSet {
 
         Assertions.assertEquals(expectedStation, actualStation);
     }
-
 
     @ParameterizedTest
     @CsvSource(value = {
