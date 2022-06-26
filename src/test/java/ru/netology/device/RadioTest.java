@@ -10,7 +10,7 @@ public class RadioTest {
     @Test
     public void shouldRadioStationSet(){
 
-        Radio radio = new Radio();
+        Radio radio = new Radio(10);
 
         radio.setNumberStation(9);
 
@@ -84,7 +84,7 @@ public class RadioTest {
 
     @ParameterizedTest
     @CsvSource(value = {
-            "11,0",
+            "101,0",
             "-1,0"
     })
     public void shouldNotVolumeSet(int volume, int expectedVolume){
@@ -98,8 +98,8 @@ public class RadioTest {
 
     @ParameterizedTest
     @CsvSource(value = {
-            "5,6",
-            "10,10",
+            "55,56",
+            "100,100",
     })
     public void shouldIncreaseVolume(int volume, int expectedVolume){
 
