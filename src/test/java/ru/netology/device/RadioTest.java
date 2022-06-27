@@ -39,6 +39,7 @@ public class RadioTest {
     @ParameterizedTest
     @CsvSource(value = {
             "5,6",
+            "8,9",
             "9,0",
     })
     public void shouldNextRadioStationSet(int stationNumber, int expectedStation){
@@ -56,6 +57,7 @@ public class RadioTest {
     @ParameterizedTest
     @CsvSource(value = {
             "6,5",
+            "9,8",
             "0,9",
     })
     public void shouldPrevRadioStationSet(int stationNumber, int expectedStation){
@@ -65,9 +67,7 @@ public class RadioTest {
         radio.setNumberStation(stationNumber);
         radio.prevStation();
 
-        int actualStation = radio.getNumberStation();
-
-        Assertions.assertEquals(expectedStation, actualStation);
+        Assertions.assertEquals(expectedStation, radio.getNumberStation());
     }
 
     @Test
@@ -99,6 +99,7 @@ public class RadioTest {
     @ParameterizedTest
     @CsvSource(value = {
             "5,6",
+            "9,10",
             "10,10",
     })
     public void shouldIncreaseVolume(int volume, int expectedVolume){
@@ -114,6 +115,7 @@ public class RadioTest {
     @ParameterizedTest
     @CsvSource(value = {
             "6,5",
+            "1,0",
             "0,0",
     })
     public void shouldDecreaseVolume(int volume, int expectedVolume){
