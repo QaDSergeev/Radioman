@@ -43,12 +43,26 @@ public class Radio {
 
     public void nextStation(){
 
-        numberStation = numberStation < maxStation ? ++numberStation : 0;
+        if (numberStation < maxStation){
+
+            ++numberStation;
+
+        } else {
+
+            numberStation = 0;
+        }
     }
 
     public void prevStation(){
 
-        numberStation = numberStation > 0 ? --numberStation : 9;
+        if (numberStation > 0){
+
+            --numberStation;
+
+        } else {
+
+            numberStation = maxStation;
+        }
     }
 
     public void increaseVolume(){
