@@ -33,17 +33,31 @@ public class Radio {
 
     public void nextStation(){
 
-        numberStation = numberStation == 9 ? 0 : ++numberStation;
+        if (numberStation < 9){
+
+            ++numberStation;
+
+        } else {
+
+            numberStation = 0;
+        }
     }
 
     public void prevStation(){
 
-        numberStation = numberStation == 0 ? 9 : --numberStation;
+        if (numberStation > 0){
+
+            --numberStation;
+
+        } else {
+
+            numberStation = 9;
+        }
     }
 
     public void increaseVolume(){
 
-        if (this.volume != 10){
+        if (this.volume < 10){
 
             ++this.volume;
         }
@@ -51,7 +65,7 @@ public class Radio {
 
     public void decreaseVolume(){
 
-        if (this.volume != 0){
+        if (this.volume > 0){
 
             --this.volume;
         }
